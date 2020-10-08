@@ -42,3 +42,9 @@ test('Main', async () => {
   expect(functions.getInput).toHaveBeenCalledTimes(2);
   expect(functions.createComment).toHaveBeenCalled();
 });
+test('Main with error', async () => {
+  process.env.GITHUB_TOKEN = '';
+  await run();
+
+  expect(functions.setFailed).toHaveBeenCalled();
+})
