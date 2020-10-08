@@ -3,7 +3,7 @@ import * as github from '@actions/github';
 import {WebhookPayload} from '@actions/github/lib/interfaces';
 import {getRepoData, getIssueData, createIssueComment} from './utils';
 
-async function run(): Promise<void> {
+export async function run(): Promise<void> {
   try {
     const message: string = core.getInput('message');
     const status: string = core.getInput('stepStatus');
@@ -33,8 +33,7 @@ async function run(): Promise<void> {
   }
 }
 
-if (!module.parent) {
-  run();
+run();
 }
 
 export {run};
