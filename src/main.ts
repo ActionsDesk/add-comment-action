@@ -26,7 +26,7 @@ async function run(): Promise<void> {
         repo
       });
     } else {
-      throw new Error('GitHub token was not found in environment.');
+      throw new Error('GitHub token was not found in environment');
     }
   } catch (error) {
     core.setFailed(error.message);
