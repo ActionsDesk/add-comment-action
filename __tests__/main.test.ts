@@ -8,7 +8,7 @@ import {run} from '../src/main';
 const functions = {
   getInput: jest.fn(value => value),
   debug: jest.fn(message => console.log(`MOCK DEBUG: ${message}`)),
-  setFailed: jest.fn(message => console.error(`Big bad error ${message}`)),
+  setFailed: jest.fn(message => true),
   createComment: jest.fn((message, status) => true)
 };
 beforeEach(() => {
