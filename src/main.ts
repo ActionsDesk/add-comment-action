@@ -7,7 +7,7 @@ async function run(): Promise<void> {
   try {
     const message: string = core.getInput('message');
     const status: string = core.getInput('stepStatus');
-    const githubToken: string = process.env.GITHUB_TOKEN || '';
+    const githubToken: string | undefined = process.env.GITHUB_TOKEN;
 
     if (githubToken) {
       const octokit: github.GitHub = new github.GitHub(githubToken);
