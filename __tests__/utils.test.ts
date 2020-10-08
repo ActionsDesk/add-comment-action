@@ -15,6 +15,10 @@ test('getRepoData', () => {
   expect(owner).toEqual(repoData.owner.login);
   expect(name).toEqual(repoData.name);
 });
+test('getRepoData throws an error', () => {
+  const repoData = undefined;
+  expect(getRepoData).toThrowError();
+})
 test('getIssueData', () => {
   const issue = {
     number: 1,
@@ -31,7 +35,11 @@ test('getIssueData', () => {
 
   expect(number).toEqual(issue.number);
 });
-test('createIssueComment', () => {
+test('getIssueData throws an error', () => {
+  const issue = undefined;
+  expect(getIssueData).toThrowError();
+})
+test('createIssueComment with success status', () => {
   const expected: string = outdent`## Outcome
 
   :white_check_mark: Red 5 standing by
@@ -39,6 +47,22 @@ test('createIssueComment', () => {
   CC: @leia @dodana @monmathma `;
 
   const actual = createIssueComment('Red 5 standing by', 'success', [
+    'leia',
+    'dodana',
+    'monmathma'
+  ]);
+
+  expect(actual).toEqual(expected);
+});
+
+test('createIssueComment with failed status', () => {
+  const expected: string = outdent`## Outcome
+
+  :X: Red 5 standing by
+
+  CC: @leia @dodana @monmathma `;
+
+  const actual = createIssueComment('Red 5 standing by', 'failed', [
     'leia',
     'dodana',
     'monmathma'
