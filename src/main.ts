@@ -34,6 +34,3 @@ export async function run(): Promise<void> {
 }
 
 run();
-}
-
-export {run};

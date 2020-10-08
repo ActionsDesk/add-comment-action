@@ -11,7 +11,7 @@ const functions = {
   setFailed: jest.fn(message => console.error(`Big bad error ${message}`)),
   createComment: jest.fn((message, status) => true)
 };
-beforeAll(() => {
+beforeEach(() => {
   process.env.GITHUB_TOKEN = 'not-a-token';
   core.getInput = functions.getInput;
   core.debug = functions.debug;
