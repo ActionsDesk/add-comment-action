@@ -89,7 +89,7 @@ jobs:
         with:
            message: 'Welcome to the repository!'
         env:
-          GITHUB_TOKEN: ${{ secrest.ADMIN_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
 ```
 
 This will workflow will create a new organization invitation for the user information found in the issue body.
