@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  collectCoverage: true,
   moduleFileExtensions: ['js', 'ts'],
   testEnvironment: 'node',
   testMatch: ['**/*.test.ts'],
@@ -8,4 +9,4 @@ module.exports = {
     '^.+\\.ts$': 'ts-jest'
   },
   verbose: true
-}
+};
