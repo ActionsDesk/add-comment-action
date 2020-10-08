@@ -2,13 +2,25 @@ name: 'Composable Issue Comments'
 description: 'This is a composable action that will write a comment to a GitHub Issue or Pull Request.'
 author: 'Froilán Irizarry Rivera'
 inputs:
-  message:
+  successMessage:
+    description: 'Issue or Pull Request message'
+    required: true
+  failureMessage:
     description: 'Issue or Pull Request message'
     required: true
   stepStatus:
     description: 'The status of the previous step. This will change the comment body.'
     default: 'failed'
     required: true
+  successLabel:
+    description: 'A label to add to the issue'
+    required: false
+  failureLabel:
+    description: 'A label to add to the issue'
+    required: false
+  mentions:
+    description: 'Comma separated list of approvers to notify when there is a failure'
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
