@@ -47,4 +47,4 @@ test('Main with error', async () => {
   await run();
 
   expect(functions.setFailed).toHaveBeenCalled();
-})
+});

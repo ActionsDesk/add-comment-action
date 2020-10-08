@@ -18,7 +18,7 @@ test('getRepoData', () => {
 test('getRepoData throws an error', () => {
   const repoData = undefined;
   expect(getRepoData).toThrowError();
-})
+});
 test('getIssueData', () => {
   const issue = {
     number: 1,
@@ -38,7 +38,7 @@ test('getIssueData', () => {
 test('getIssueData throws an error', () => {
   const issue = undefined;
   expect(getIssueData).toThrowError();
-})
+});
 test('createIssueComment with success status', () => {
   const expected: string = outdent`## Outcome
 
