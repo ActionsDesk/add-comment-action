@@ -81,4 +81,4 @@ test('createIssueComment without mentions', () => {
   const actual = createIssueComment('Red 5 standing by', 'failed');
 
   expect(actual).toEqual(expected);
-})
+});

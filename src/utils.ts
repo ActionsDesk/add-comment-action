@@ -30,7 +30,7 @@ export function createIssueComment(
     : ':x:';
   let mentionsText = '';
 
-  if(mentions) {
+  if (mentions) {
     for (let mention of mentions) {
       mentionsText += `@${mention} `;
     }

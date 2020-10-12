@@ -1,5 +1,5 @@
 /* global octomock */
-import outdent from 'outdent'
+import outdent from 'outdent';
 import {run} from '../src/main';
 
 beforeEach(() => {
@@ -50,7 +50,7 @@ test(`No status doesnt format message`, async () => {
   expect(octomock.mockFunctions.addLabels).toHaveBeenCalledTimes(0);
 });
 test(`Message formatted with all inputs and status is success`, async () => {
-  const message = 'I am a message' ;
+  const message = 'I am a message';
 
   /**
    * Formatted message by the inclusion of other actions inputs
