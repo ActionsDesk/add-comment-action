@@ -58,7 +58,7 @@ test('createIssueComment with success status', () => {
 test('createIssueComment with failed status', () => {
   const expected: string = outdent`## Outcome
 
-  :X: Red 5 standing by
+  :x: Red 5 standing by
 
   CC: @leia @dodana @monmathma `;
 
@@ -70,3 +70,15 @@ test('createIssueComment with failed status', () => {
 
   expect(actual).toEqual(expected);
 });
+
+test('createIssueComment without mentions', () => {
+  const expected: string = outdent`## Outcome
+
+  :x: Red 5 standing by
+
+  CC: `;
+
+  const actual = createIssueComment('Red 5 standing by', 'failed');
+
+  expect(actual).toEqual(expected);
+})
