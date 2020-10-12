@@ -34,7 +34,7 @@ jobs:
       with:
         file: ./coverage/clover.xml
     - name: Upload test coverage artifact
-      users: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
       with:
         name: test-coverage
         path: ./coverage
