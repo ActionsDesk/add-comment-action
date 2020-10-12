@@ -23,15 +23,17 @@ export function getIssueData(issue: any): IssueData {
 export function createIssueComment(
   message: string,
   status: string,
-  mentions: string[] = []
+  mentions?: string[]
 ): string {
   const statusIcon: string = isSuccessful(status)
     ? ':white_check_mark:'
     : ':x:';
   let mentionsText = '';
 
-  for (let mention of mentions) {
-    mentionsText += `@${mention} `;
+  if(mentions) {
+    for (let mention of mentions) {
+      mentionsText += `@${mention} `;
+    }
   }
 
   const body: string = outdent`## Outcome
