@@ -8,7 +8,7 @@ import {
   isSuccessful
 } from './utils';
 
-async function run(): Promise<void> {
+export async function run(): Promise<void> {
   try {
     const message: string = core.getInput('message');
     const failureMessage: string = core.getInput('failureMessage');
@@ -16,7 +16,7 @@ async function run(): Promise<void> {
     const successLabel: string = core.getInput('successLabel');
     const failureLabel: string = core.getInput('failureLabel');
     const mentions: string = core.getInput('mentions');
-    const githubToken: string = process.env.GITHUB_TOKEN || '';
+    const githubToken: string | undefined = process.env.GITHUB_TOKEN;
 
     if (githubToken) {
       const octokit: github.GitHub = new github.GitHub(githubToken);
@@ -59,15 +59,11 @@ async function run(): Promise<void> {
         });
       }
     } else {
-      throw new Error('GitHub token was not found in environment.');
+      throw new Error('GitHub token was not found in environment');
     }
   } catch (error) {
     core.setFailed(error.message);
   }
 }
 
-if (!module.parent) {
-  run();
-}
-
-export {run};
+run();

@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  collectCoverage: true,
   moduleFileExtensions: ['js', 'ts'],
   testEnvironment: 'node',
   testMatch: ['**/*.test.ts'],
@@ -11,4 +12,4 @@ module.exports = {
   "setupFilesAfterEnv": [
       "./setupJest.ts"
   ]
-}
+};
