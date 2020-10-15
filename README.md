@@ -1,8 +1,9 @@
+![build-test](https://github.com/ActionsDesk/add-comment-action/workflows/build-test/badge.svg)
+
 # GitHub Action - Add Comment Action
 
 This GitHub action will add a comment to an issue with some minor formatting based on the status
 
-<!-- Add test badge once proper tests are added -->
 
 ## Usage
 
